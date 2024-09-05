@@ -2,7 +2,7 @@ package repositorios;
 
 import java.util.ArrayList;
 
-import Interfaces.IProjetos;
+import interfaces.IProjetos;
 import entidades.Projeto;
 
 public class ProjetosRepositorio implements IProjetos {

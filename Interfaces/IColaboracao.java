@@ -1,5 +1,5 @@
-package Interfaces;
+package interfaces;
 
 public interface IColaboracao {
-    public void realizarTerefa();
+    public void realizarTarefa();
 }

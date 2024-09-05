@@ -1,6 +1,6 @@
 package entidades;
 
-import Interfaces.IColaboracao;
+import interfaces.IColaboracao;
 
 public class Tarefa implements IColaboracao {
     private String nome;
@@ -25,7 +25,7 @@ public class Tarefa implements IColaboracao {
     }
 
     @Override
-    public void realizarTerefa() {
+    public void realizarTarefa() {
         this.tarefaFeita = true;
     }
 
