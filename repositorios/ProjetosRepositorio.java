@@ -27,3 +27,4 @@ public class ProjetosRepositorio implements IProjetos {
         projetos.add(projeto);
     }
 }
+// CRUD

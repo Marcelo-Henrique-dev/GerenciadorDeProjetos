@@ -3,7 +3,29 @@ package entidades;
 import entidades.enums.TipoProjeto;
 
 public class ProjetoDesenvolvimento extends Projeto {
-    public ProjetoDesenvolvimento(String nome, int orcamento){
+    private String linguagemPrincipal;
+    private String framework;
+
+    public ProjetoDesenvolvimento(String nome, int orcamento, String linguagemPrincipal, String framework) {
         super(nome, orcamento, TipoProjeto.DESENVOLVIMENTO);
+        this.linguagemPrincipal = linguagemPrincipal;
+        this.framework = framework;
+    }
+
+    // Getters e Setters para os novos atributos
+    public String getLinguagemPrincipal() {
+        return linguagemPrincipal;
+    }
+
+    public void setLinguagemPrincipal(String linguagemPrincipal) {
+        this.linguagemPrincipal = linguagemPrincipal;
+    }
+
+    public String getFramework() {
+        return framework;
+    }
+
+    public void setFramework(String framework) {
+        this.framework = framework;
     }
 }
