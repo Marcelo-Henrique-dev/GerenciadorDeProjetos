@@ -3,13 +3,14 @@ import java.util.Scanner;
 import entidades.Colaborador;
 import entidades.enums.TipoProjeto;
 import exceptions.InvalidProjetoTypeException;
+import exceptions.ProjetoNotFoundException;
 import servicos.ProjetoService;
 
 public class Main {
     private static ProjetoService projetoService = new ProjetoService();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ProjetoNotFoundException, InvalidProjetoTypeException {
         int opc;
         do {
             System.out.println("Menu: ");
@@ -17,7 +18,7 @@ public class Main {
             System.out.println("| 2 - Listar Projetos |");
             System.out.println("| 3 - Listar Colaboradores |");
             System.out.println("| 4 - Editar Projeto |");
-            System.out.println("| 10 - Sair |");
+            System.out.println("| 0 - Sair |");
             opc = scanner.nextInt();
             scanner.nextLine();
 
@@ -31,7 +32,7 @@ public class Main {
                 case 3:
                     projetoService.listarColaboradores(menuProjeto());
                     break;
-                case 10:
+                case 0:
                     System.out.println("Saindo...");
                     break;
                 default:

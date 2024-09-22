@@ -29,6 +29,12 @@ public abstract class Projeto {
     public ArrayList<Colaborador> getColaboradores(){
         return this.colaboradores;
     }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setOrcamento(int orcamento){
+        this.orcamento = orcamento;
+    }
 
     public void cadastrarColaborador(Colaborador colaborador){
         colaboradores.add(colaborador);
