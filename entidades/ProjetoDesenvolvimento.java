@@ -1,14 +1,12 @@
 package entidades;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import entidades.enums.TipoProjeto;
 
 public class ProjetoDesenvolvimento extends Projeto {
     private String linguagemPrincipal;
     private String framework;
-    private ArrayList<Colaborador> colaboradoresDesenvolvimento;
 
     public ProjetoDesenvolvimento(String nome, int orcamento, String linguagemPrincipal, String framework) {
         super(nome, orcamento, TipoProjeto.DESENVOLVIMENTO);
