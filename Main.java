@@ -39,7 +39,7 @@ public class Main {
                     System.out.println("Opção Inválida!");
             }
 
-        } while (opc != 10);
+        } while (opc != 0);
     }
 
     public static void adicionarProjeto() {
