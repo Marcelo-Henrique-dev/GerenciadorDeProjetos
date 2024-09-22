@@ -22,6 +22,9 @@ public class Colaborador {
         tarefa.realizarTarefa();
     }
 
+    public String getNome(){
+        return this.nome;
+    }
     public String getCargo(){
         return this.cargo;
     }

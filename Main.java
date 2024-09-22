@@ -15,7 +15,8 @@ public class Main {
             System.out.println("Menu: ");
             System.out.println("| 1 - Adicionar Projeto |");
             System.out.println("| 2 - Listar Projetos |");
-            System.out.println("| 3 - Editar projeto |");
+            System.out.println("| 3 - Listar Colaboradores |");
+            System.out.println("| 4 - Editar Projeto |");
             System.out.println("| 10 - Sair |");
             opc = scanner.nextInt();
             scanner.nextLine();
@@ -28,7 +29,7 @@ public class Main {
                     projetoService.listarProjetos();
                     break;
                 case 3:
-                    
+                    projetoService.listarColaboradores(menuProjeto());
                     break;
                 case 10:
                     System.out.println("Saindo...");
@@ -93,7 +94,7 @@ public class Main {
             scanner.nextLine();
             Colaborador[] colaboradoresArray = new Colaborador[colaboradores];
             for (int i = 0; i < colaboradores; i++) {
-                System.out.println("Digite o nome do colaborador " + i+1);
+                System.out.println("Digite o nome do colaborador " + (i+1));
                 String nomeColaborador = scanner.nextLine();
                 System.out.println("Agora digite o cargo que ele ocupará");
                 String cargo = scanner.nextLine();
@@ -109,6 +110,13 @@ public class Main {
         } catch (InvalidProjetoTypeException e) {
             System.out.println("Erro: " + e.getMessage());
         }
+    }
+
+    public static int menuProjeto(){
+        System.out.println("Ecolha o projeto pelo id:");
+        int escolha = scanner.nextInt();
+        scanner.nextLine();
+        return escolha;
     }
 
 }

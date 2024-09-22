@@ -55,10 +55,30 @@ public class ProjetoService {
                     ProjetoPesquisa projetoPesquisa = (ProjetoPesquisa) p;
                     detalhes = "Área de Pesquisa: " + projetoPesquisa.getAreaPesquisa() + " | Financiadora: " + projetoPesquisa.getInstituicaoFinanciadora();
                 }
-                System.out.println((i + 1) + ". " + p.getNome() + " | Orçamento: " + p.getOrcamento() + " | Tipo: " + tipoProjeto + " | " + detalhes);
+                System.out.println(i + ". " + p.getNome() + " | Orçamento: " + p.getOrcamento() + " | Tipo: " + tipoProjeto + " | " + detalhes);
             }
         }
     }
     
+    public void listarColaboradores(int index){
+        ArrayList<Projeto> projetos = projetoRepositorio.listarProjetos();
+        Projeto projeto = projetos.get(index);
+        ArrayList<Colaborador> colaboradores = projeto.listarColaboradores();
+
+        if(colaboradores.isEmpty()){
+            System.out.println("Nenhum colaborador encontrado.");
+        }else{
+            for(int i=0; i<colaboradores.size(); i++){
+                Colaborador c = colaboradores.get(i);
+                String nome = c.getNome();
+                String cargo = c.getCargo();
+                int anosExp = c.getAnosExperiencia();
+
+                System.out.println((i+1)+"| Colaborador: "+nome+" | Cargo: "+cargo+" Anos de Exp: "+anosExp);
+
+            }
+        }
+
+    }
 
 }

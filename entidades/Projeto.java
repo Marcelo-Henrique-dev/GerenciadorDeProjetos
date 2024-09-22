@@ -34,4 +34,8 @@ public abstract class Projeto {
         colaboradores.add(colaborador);
     }
 
+    public ArrayList<Colaborador> listarColaboradores(){
+        return colaboradores;
+    }
+
 }
