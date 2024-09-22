@@ -1,7 +1,5 @@
 package entidades;
 
-import java.util.ArrayList;
-
 import entidades.enums.TipoProjeto;
 
 public class ProjetoDesenvolvimento extends Projeto {
