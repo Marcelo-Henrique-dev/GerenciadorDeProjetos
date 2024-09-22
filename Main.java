@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Menu: ");
             System.out.println("| 1 - Adicionar Projeto |");
             System.out.println("| 2 - Listar Projetos |");
-            System.out.println("| 3 - Adicionar Colaborador |");
+            System.out.println("| 3 - Editar projeto |");
             System.out.println("| 10 - Sair |");
             opc = scanner.nextInt();
             scanner.nextLine();
@@ -26,6 +26,9 @@ public class Main {
                     break;
                 case 2:
                     projetoService.listarProjetos();
+                    break;
+                case 3:
+                    
                     break;
                 case 10:
                     System.out.println("Saindo...");
@@ -66,19 +69,6 @@ public class Main {
                     System.out.println("Qual?");
                     framework = scanner.nextLine();
                 }
-                System.out.println("Quantos colaboradores estarão empenhados?");
-                int colaboradores = scanner.nextInt();
-                scanner.nextLine();
-                for(int i=0; i>colaboradores; i++){
-                    System.out.println("Digite o nome do colaborador "+i);
-                    String nomeColaborador = scanner.nextLine();
-                    System.out.println("Agora digite o cargo que ele ocupará");
-                    String cargo = scanner.nextLine();
-                    System.out.println("Agora os anos de experiência dele");
-                    int anos = scanner.nextInt();
-                    scanner.nextLine();
-                    Colaborador colaborador = new Colaborador(nomeColaborador, cargo, anos);
-                }
             } else if (tipoOpc == 2) {
                 System.out.println("Qual a área de pesquisa?");
                 area = scanner.nextLine();
@@ -98,7 +88,23 @@ public class Main {
                     throw new InvalidProjetoTypeException("Tipo do projeto inválido!");
             }
 
-            projetoService.adicionarProjeto(nome, orcamento, tipo, linguagem, framework, area, instituicao);
+            System.out.println("Quantos colaboradores estarão empenhados?");
+            int colaboradores = scanner.nextInt();
+            scanner.nextLine();
+            Colaborador[] colaboradoresArray = new Colaborador[colaboradores];
+            for (int i = 0; i < colaboradores; i++) {
+                System.out.println("Digite o nome do colaborador " + i+1);
+                String nomeColaborador = scanner.nextLine();
+                System.out.println("Agora digite o cargo que ele ocupará");
+                String cargo = scanner.nextLine();
+                System.out.println("Agora os anos de experiência dele");
+                int anos = scanner.nextInt();
+                scanner.nextLine();
+                Colaborador colaborador = new Colaborador(nomeColaborador, cargo, anos);
+                colaboradoresArray[i] = colaborador;
+            }
+
+            projetoService.adicionarProjeto(nome, orcamento, tipo, linguagem, framework, area, instituicao, colaboradoresArray);
 
         } catch (InvalidProjetoTypeException e) {
             System.out.println("Erro: " + e.getMessage());

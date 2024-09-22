@@ -2,6 +2,7 @@ package servicos;
 
 import java.util.ArrayList;
 
+import entidades.Colaborador;
 import entidades.Projeto;
 import entidades.ProjetoDesenvolvimento;
 import entidades.ProjetoPesquisa;
@@ -13,8 +14,11 @@ import repositorios.ProjetosRepositorio;
 public class ProjetoService {
     private ProjetosRepositorio projetoRepositorio = new ProjetosRepositorio();
 
-    public void adicionarProjeto(String nome, int orcamento, TipoProjeto tipoProjeto, String linguagemPrincipal, String framework, String areaPesquisa, String instituicaoFinanciadora) throws InvalidProjetoTypeException {
+    public void adicionarProjeto(String nome, int orcamento, TipoProjeto tipoProjeto, String linguagemPrincipal, String framework, String areaPesquisa, String instituicaoFinanciadora, Colaborador[] colaboradoresArray) throws InvalidProjetoTypeException {
         Projeto projeto = criarProjeto(nome, orcamento, tipoProjeto, linguagemPrincipal, framework, areaPesquisa, instituicaoFinanciadora);
+        for(Colaborador colaborador : colaboradoresArray){
+            projeto.cadastrarColaborador(colaborador);
+        }
         if(projeto != null){
             projetoRepositorio.cadastrarProjeto(projeto);
             System.out.println("Projeto cadastrado com sucesso!");

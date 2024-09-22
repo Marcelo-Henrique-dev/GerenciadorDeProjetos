@@ -30,4 +30,8 @@ public abstract class Projeto {
         return this.colaboradores;
     }
 
+    public void cadastrarColaborador(Colaborador colaborador){
+        colaboradores.add(colaborador);
+    }
+
 }
