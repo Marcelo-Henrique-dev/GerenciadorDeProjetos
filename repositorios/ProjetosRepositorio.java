@@ -14,7 +14,6 @@ public class ProjetosRepositorio implements IProjetos {
         }
         return null;
     }
-
     
     @Override
     public ArrayList<Projeto> listarProjetos(){

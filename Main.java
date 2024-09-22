@@ -14,7 +14,8 @@ public class Main {
             System.out.println("Menu: ");
             System.out.println("| 1 - Adicionar Projeto |");
             System.out.println("| 2 - Listar Projetos |");
-            System.out.println("| 3 - Sair |");
+            System.out.println("| 3 - Adicionar Colaborador |");
+            System.out.println("| 10 - Sair |");
             opc = scanner.nextInt();
             scanner.nextLine();
 
@@ -26,13 +27,16 @@ public class Main {
                     projetoService.listarProjetos();
                     break;
                 case 3:
+                    
+                    break;
+                case 10:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção Inválida!");
             }
 
-        } while (opc != 3);
+        } while (opc != 10);
     }
 
     public static void adicionarProjeto() {

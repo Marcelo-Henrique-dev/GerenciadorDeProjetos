@@ -51,7 +51,6 @@ public class ProjetoService {
                     ProjetoPesquisa projetoPesquisa = (ProjetoPesquisa) p;
                     detalhes = "Área de Pesquisa: " + projetoPesquisa.getAreaPesquisa() + " | Financiadora: " + projetoPesquisa.getInstituicaoFinanciadora();
                 }
-    
                 System.out.println((i + 1) + ". " + p.getNome() + " | Orçamento: " + p.getOrcamento() + " | Tipo: " + tipoProjeto + " | " + detalhes);
             }
         }

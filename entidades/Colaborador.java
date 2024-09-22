@@ -3,12 +3,14 @@ package entidades;
 import java.util.ArrayList;
 
 public class Colaborador {
+    private int id;
     private String nome;
     private String cargo;
     private int anosExperiencia;
     private ArrayList<Tarefa> tarefas;
 
     public Colaborador(String nome, String cargo, int anosExperiencia){
+        this.id = (int) Math.random();
         this.nome = nome;
         this.cargo = cargo;
         this.anosExperiencia = anosExperiencia;
@@ -29,6 +31,10 @@ public class Colaborador {
 
     public void atribuirTarefa(Tarefa tarefa){
         tarefas.add(tarefa);
+    }
+
+    public int getId(){
+        return this.id;
     }
 
 }
